@@ -7,8 +7,8 @@
             </div>
             <div>
                 <ul>
-                    <li v-for="(item,index) in headerArray" :key="item+index">
-                        <router-link :to="item.href" :class="item.class">{{item.label}}</router-link>
+                    <li v-for="(item,index) in headerArray" :key="item+index" @click="changeSelected(item.tag)">
+                        <router-link :to="item.href" :class="[item.tag===navTag?'selected':'']">{{item.label}}</router-link>
                     </li>
                 </ul>
             </div>
@@ -21,32 +21,51 @@ export default {
     name:'Header',
     data(){
         return{
+            routePath:"",
             headerArray:[
                 {
                     value:'',
                     label:'站点介绍',
                     class:'selected',
-                    href:'/'
+                    href:'/',
+                    tag:"home"
                 },
                 {
                     value:'',
                     label:'学习计划',
                     class:'',
-                    href:'/studyPlan'
+                    href:'/studyPlan',
+                    tag:"studyPlan"
                 },
                 {
                     value:'',
                     label:'学习笔记',
                     class:'',
-                    href:'/studyNote'
+                    href:'/studyNote',
+                    tag:"studyNote"
                 },
                 {
                     value:'',
                     label:'书影心得',
                     class:'',
-                    href:'/bookReport'
+                    href:'/bookReport',
+                    tag:"bookReport"
                 }
             ]
+        }
+    },
+    created(){
+        this.routePath = this.$route.path==="/"?"home":this.$route.path.split('/')[1]
+        this.changeSelected(this.routePath)
+    },
+    computed:{
+        navTag(){
+            return this.$store.state.headerSelected
+        }
+    },
+    methods:{
+        changeSelected(tag){
+            this.$store.commit('changeSelected',tag)
         }
     }
 }
