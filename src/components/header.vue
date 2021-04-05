@@ -75,7 +75,7 @@ export default {
     .websiteHeader{
         width: 100%;
         margin: 0 auto;
-        background: #0fa6fc;
+        background: #d2a3f6;
         min-width: 1360px;
     }
     .websiteHeaderContent{
@@ -128,9 +128,11 @@ export default {
         text-decoration: none;
     }
     .websiteHeaderContent div:last-child ul li a:hover{
-        color: #f9eb08;
+        font-size: 18px;
+        font-weight: bold;
     }
     .selected{
-        color: #f9eb08 !important;
+        font-size: 18px;
+        font-weight: bold;
     }
 </style>

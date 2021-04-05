@@ -62,7 +62,7 @@ export default {
 <style scoped>
 .home{
   width: 62%;
-  /* min-width: 1190px; */
+  min-width: 1200px;
   margin: 0 auto;
 }
 .htmlCode{
