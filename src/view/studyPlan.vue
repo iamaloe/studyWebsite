@@ -5,7 +5,10 @@
                 <li v-for="(item,index) in planLists" :key="item.title+index">
                     <header @click="showTask(item.ifShowLists,index)" :class="item.ifShowLists?'showBorder':'hideBorder'"><p>{{item.title}}</p><p><img :src="item.ifShowLists===true?'.../../static/studyPlan/up.png':'.../../static/studyPlan/down.png'" alt="up"></p></header>
                     <div v-if="item.ifShowLists">
-                        <p v-for="(itemTask,ind) in item.lists" :key="ind">{{itemTask}}</p>
+                        <p v-for="(itemTask,ind) in item.lists" :key="ind">{{itemTask}}
+                            <!-- <div>{{itemTask}}</div> -->
+                            <!-- <div>{{itemTask.time}}</div> -->
+                        </p>
                     </div>
                 </li>
             </ul>
@@ -29,6 +32,13 @@
                             "20210330:头部状态",
                             "20210331:设置全局自适应字体;学习计划psd设计",
                             "20210401:学习计划页面编写"
+                            // {"time":"20210326","content":"github仓库创建"},
+                            // {"time":"20210327","content":"github仓库分支与vscode连接"},
+                            // {"time":"20210328","content":"项目搭建;站点介绍psd设计"},
+                            // {"time":"20210329","content":"首页编写"},
+                            // {"time":"20210330","content":"头部状态"},
+                            // {"time":"20210331","content":"设置全局自适应字体;学习计划psd设计"},
+                            // {"time":"20210401","content":"学习计划页面编写"}
                         ]
                     },
                     // {

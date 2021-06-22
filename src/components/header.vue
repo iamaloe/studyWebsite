@@ -8,7 +8,7 @@
             <div>
                 <ul>
                     <li v-for="(item,index) in headerArray" :key="item+index" @click="changeSelected(item.tag)">
-                        <router-link :to="item.href" :class="[item.tag===navTag?'selected':'']">{{item.label}}</router-link>
+                        <router-link :to="item.href" :class="[item.tag===navTag?'linkHeader selected':'linkHeader']">{{item.label}}</router-link>
                     </li>
                 </ul>
             </div>
@@ -127,7 +127,7 @@ export default {
         color: #ffff;
         text-decoration: none;
     }
-    .websiteHeaderContent div:last-child ul li a:hover{
+    .websiteHeaderContent div:last-child ul li .linkHeader:hover{
         font-size: 18px;
         font-weight: bold;
     }
