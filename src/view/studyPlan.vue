@@ -5,10 +5,7 @@
                 <li v-for="(item,index) in planLists" :key="item.title+index">
                     <header @click="showTask(item.ifShowLists,index)" :class="item.ifShowLists?'showBorder':'hideBorder'"><p>{{item.title}}</p><p><img :src="item.ifShowLists===true?'.../../static/studyPlan/up.png':'.../../static/studyPlan/down.png'" alt="up"></p></header>
                     <div v-if="item.ifShowLists">
-                        <p v-for="(itemTask,ind) in item.lists" :key="ind">{{itemTask}}
-                            <!-- <div>{{itemTask}}</div> -->
-                            <!-- <div>{{itemTask.time}}</div> -->
-                        </p>
+                        <p v-for="(itemTask,ind) in item.lists" :key="ind">{{itemTask}}</p>
                     </div>
                 </li>
             </ul>
